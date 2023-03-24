@@ -1,0 +1,40 @@
+FROM archlinux:latest
+
+# Install necessary packages
+RUN pacman -Syyu --noconfirm && \
+    pacman -S --noconfirm \
+        git \
+        curl \
+        wget \
+        build-essential \
+        python3 \
+        python3-pip
+        gcc \
+        make \ 
+        cmake \
+        libtool \
+        auto-tools \
+        llvm \
+        clang \
+        rustup \
+        go \
+        nodejs \
+        npm \
+        yarn \
+        ruby \
+        rubygems \
+        php \
+# Clone Git repository
+RUN git clone https://github.com/example/repository.git /opt/repository
+
+# Set working directory
+WORKDIR /opt/repository
+
+# Install Python packages
+RUN pip3 install -r requirements.txt
+
+# Expose necessary ports
+EXPOSE 8000
+
+# Start application
+CMD ["python3", "app.py"]
