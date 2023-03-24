@@ -13,6 +13,8 @@ RUN pacman -Syyu --noconfirm \
     cmake \
     clang \
     llvm \
+    python \
+    python-pip \
     vim \
     git \
     curl \
