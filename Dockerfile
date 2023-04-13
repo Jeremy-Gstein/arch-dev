@@ -4,7 +4,6 @@ RUN pacman -Syyu --noconfirm \
     && pacman -S --noconfirm rustup \
     && rustup install stable \
     && rustup default stable \
-    && cargo update \
     && pacman -S --noconfirm \
     pkg-config \
     git \
@@ -13,8 +12,5 @@ RUN pacman -Syyu --noconfirm \
     cmake \
     clang \
     llvm \
-    python \
-    python-pip \
     vim \
     git \
-    curl \
