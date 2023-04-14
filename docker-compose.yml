@@ -9,7 +9,7 @@ services:
     stdin_open: true
     command: /bin/bash 
     volumes:
-      - /home/jg/scripts:/data
+      - $PWD:/data
 
 volumes:
   data:
