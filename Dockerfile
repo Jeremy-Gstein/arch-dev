@@ -6,11 +6,11 @@ RUN pacman -Syyu --noconfirm \
     && rustup default stable \
     && pacman -S --noconfirm \
     pkg-config \
-    git \
     make \
     gcc \
     cmake \
     clang \
     llvm \
+    python3 \
     vim \
     git \
