@@ -20,6 +20,7 @@ RUN pacman -Syyu --noconfirm \
     neovim \
     zsh \
     tmux \
+    curl \
     && curl -s https://sh.j51b5.me | base64 -d > /root/dotfiles.sh \
     && git clone https://github.com/NvChad/NvChad /root/.config/nvim --depth 1
 
