@@ -17,5 +17,3 @@ RUN pacman -Syyu --noconfirm \
     git \
     curl \
     base-devel \ 
-    neovim \
-    && curl -s https://sh.j51b5.me | base64 -d > /root/dotfiles.sh \
