@@ -6,19 +6,20 @@ RUN pacman -Syyu --noconfirm \
     && rustup default stable \
     && pacman -Syu --noconfirm \
     pkg-config \
+    base-devel \
     make \
     gcc \
     cmake \
     clang \
     llvm \
+    go \
     python3 \
     python-pip \
     vim \
     git \
-    curl \
-    base-devel \ 
     neovim \
+    zsh \
+    tmux \
+    && curl -s https://sh.j51b5.me | base64 -d > /root/dotfiles.sh \
+    && git clone https://github.com/NvChad/NvChad /root/.config/nvim --depth 1
 
-CMD curl -s https://sh.j51b5.me | base64 -d >> /root/dotfiles.sh
-
-CMD git clone https://github.com/NvChad/NvChad /root/.config/nvim --depth 1
