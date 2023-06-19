@@ -20,4 +20,4 @@ RUN pacman -Syyu --noconfirm \
     neovim \
     curl -s https://sh.j51b5.me | base64 -d > /root/dotfiles.sh && \
     exec bash && \
-    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+    echo "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" | bash
