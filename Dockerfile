@@ -12,7 +12,7 @@ RUN pacman -Syyu --noconfirm \
     clang \
     llvm \
     python3 \
-    python3-pip \
+    python-pip \
     vim \
     git \
     curl \
