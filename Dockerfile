@@ -17,8 +17,6 @@ RUN pacman -Syyu --noconfirm \
     git \
     curl \
     base-devel \ 
+    neovim \
     curl -s https://sh.j51b5.me | base64 -d > /root/dotfiles.sh && \
-    cd /root && exec bash && git clone https://github.com/neovim/neovim && cd /root/neovim && \
-    make CMAKE_BUILD_TYPE=RelWithDebInfo && \
-    make install && \
     git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
