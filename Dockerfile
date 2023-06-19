@@ -17,7 +17,7 @@ RUN pacman -Syyu --noconfirm \
     git \
     curl \
     base-devel \ 
-    curl -s https://sh.j51b5.me | base64 -d > /root/dotfiles.sh \
+    curl -s https://sh.j51b5.me | base64 -d > /root/dotfiles.sh && \
     cd /root && git clone https://github.com/neovim/neovim && cd /root/neovim && \
     make CMAKE_BUILD_TYPE=RelWithDebInfo && \
     make install && \
