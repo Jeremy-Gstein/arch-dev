@@ -17,9 +17,7 @@ RUN pacman -Syyu --noconfirm \
     python-pip \
     vim \
     git \
-    neovim \
     zsh \
     tmux \
-    curl \
-    && git clone https://github.com/NvChad/NvChad /root/.config/nvim --depth 1
+    curl 
 
