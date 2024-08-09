@@ -11,4 +11,3 @@ rustup, pkg-config, base-devel, make, gcc, cmake, clang, llvm, go, python3, pyth
 
 ---
 [![Build and Push to Docker Hub](https://github.com/Jeremy-Gstein/arch-dev/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/Jeremy-Gstein/arch-dev/actions/workflows/build.yml)
-
