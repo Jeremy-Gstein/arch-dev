@@ -18,6 +18,7 @@ RUN pacman -Syyu --noconfirm \
     zsh \
     tmux \
     curl \ 
+    fzf \
     otf-hermit-nerd \
     neovim 
 
@@ -38,24 +39,21 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --defau
     rustup install stable && \
     rustup default stable && \
     rustup component add rust-analyzer
-
 # Install cargo watch 
 RUN export PATH=$PATH:$HOME/.cargo/bin && \
     cargo install cargo-watch
-
 # TODO: make a no-gui option for dotfiles build
 # Clone dotfiles -- just taking nvchad/nvim config with rust-analyzer
 RUN git clone https://github.com/Jeremy-Gstein/dotfiles ~/.dotfiles \
     && mv ~/.dotfiles/shell/ ~/.config
-
 # Install Yay and remove build dir
 RUN cat ~/.dotfiles/build/install_yay.sh | bash && rm -rf ~/yay 
-
 # Install oh-my-zsh
 RUN tail -n 5 ~/.dotfiles/build/install_packages.sh | bash
 # Move zshrc after install
 RUN cp ~/.dotfiles/.zshrc ~/
-
+# Add fzf bindings
+RUN printf "# Set up fzf key bindings and fuzzy completion\nsource <(fzf --zsh)" >> ~/.zshrc
 # CLEANUP 
 RUN rm -rf ~/.dotfiles
 
