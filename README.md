@@ -50,6 +50,5 @@ Custom .zshrc and .config/nvim with rust-analyzer configured as a LSP.
 | arch-dev | 1337 | 1337 | None     | ALL=(ALL) NOPASSWD:ALL |
 
 Understand the potential security flaws and use this bundled software at your own risk!
-
 ---
 [![Build and Push to Docker Hub](https://github.com/Jeremy-Gstein/arch-dev/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/Jeremy-Gstein/arch-dev/actions/workflows/build.yml)
