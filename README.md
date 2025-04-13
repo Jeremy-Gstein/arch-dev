@@ -43,11 +43,12 @@ Container: `/data/foo.txt`
 | neovim          | Modernized version of `vim`                              |
 
 ### Configurations:
-Custom .zshrc and .config/nvim with rust-analyzer configured as a LSP
-The system includes a default user account:
+Custom .zshrc and .config/nvim with rust-analyzer configured as a LSP.
+### The system includes a default user account:
 | Username | UID  | GID  | Password | /etc/sudoers           |
 |----------|------|------|----------|------------------------|
 | arch-dev | 1337 | 1337 | None     | ALL=(ALL) NOPASSWD:ALL |
+
 Understand the potential security flaws and use this bundled software at your own risk!
 
 ---
