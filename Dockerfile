@@ -1,7 +1,7 @@
+# Base Image (https://gitlab.archlinux.org/archlinux/archlinux-docker/-/blob/3d3996ec400b3b9ef1c04fa5b4b6b81725a8eaac/Dockerfile.base)
 FROM archlinux:latest
-
 # Arch being rolling, we first assure base packages are latest version.
-RUN pacman -Syyu --noconfirm \
+RUN pacman -Syy --noconfirm \
     && pacman -Syu --noconfirm \
     pkg-config \
     base-devel \
@@ -10,21 +10,23 @@ RUN pacman -Syyu --noconfirm \
     cmake \
     clang \
     llvm \
-    go \ 
+    go \
     python3 \
     python-pip \
     vim \
     git \
     zsh \
     tmux \
-    curl \ 
+    curl \
     fzf \
+    jq \
     otf-hermit-nerd \
     neovim 
 
+# TODO: default should have no user.
 # Create a user archdev with UID and GID 1337
 RUN groupadd -g 1337 archdev && \
-    useradd -m -u 1337 -g archdev -s /bin/zsh archdev
+    useradd -m -u 1337 -g archdev -s /usr/bin/zsh archdev
 # Give user passwordless root -- this is a dev container for writing and building software not hosting and running.
 RUN usermod -aG wheel archdev && \
     echo "archdev ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/archdev
@@ -57,6 +59,4 @@ RUN printf "# Set up fzf key bindings and fuzzy completion\nsource <(fzf --zsh)"
 # CLEANUP 
 RUN rm -rf ~/.dotfiles
 
-
-CMD ["zsh"]
-
+CMD ["/usr/bin/zsh"]

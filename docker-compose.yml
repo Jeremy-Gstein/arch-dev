@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     tty: true
     stdin_open: true
-    command: /bin/zsh
+    command: /usr/bin/zsh
     volumes:
       - $PWD:/data
 
